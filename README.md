@@ -86,21 +86,66 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 ```
 ovianta-prototype/
 ├── app/
-│   ├── patients/
-│   │   └── page.tsx          # Patient management page
 │   ├── appointments/
-│   │   └── page.tsx          # Appointment scheduling page
-│   └── layout.tsx            # Root layout with sidebar
+│   │   ├── actions.ts        # Server actions for appointments
+│   │   └── page.tsx          # Appointment management page
+│   ├── calendar/
+│   │   └── page.tsx          # Calendar view (coming soon)
+│   ├── patients/
+│   │   ├── actions.ts        # Server actions for patients
+│   │   └── page.tsx          # Patient management page
+│   ├── favicon.ico
+│   ├── globals.css           # Global styles
+│   ├── layout.tsx            # Root layout with sidebar
+│   └── page.tsx              # Home page
 ├── components/
+│   ├── appointments/
+│   │   ├── create-appointment-dialog.tsx
+│   │   └── edit-appointment-dialog.tsx
+│   ├── patients/
+│   │   ├── create-patient-dialog.tsx
+│   │   └── edit-patient-dialog.tsx
+│   ├── ui/                   # Shadcn UI components
+│   │   ├── breadcrumb.tsx
+│   │   ├── button.tsx
+│   │   ├── dialog.tsx
+│   │   ├── dropdown-menu.tsx
+│   │   ├── input.tsx
+│   │   ├── label.tsx
+│   │   ├── separator.tsx
+│   │   ├── sheet.tsx
+│   │   ├── sidebar.tsx
+│   │   ├── skeleton.tsx
+│   │   └── tooltip.tsx
 │   ├── app-sidebar.tsx       # Navigation sidebar
-│   ├── patients/             # Patient-related components
-│   └── appointments/         # Appointment-related components
+│   ├── search-form.tsx       # Search functionality
+│   └── version-switcher.tsx  # Version display
+├── hooks/
+│   └── use-mobile.ts         # Mobile detection hook
 ├── lib/
+│   ├── models/
+│   │   ├── appointment-status.ts  # Appointment status types
+│   │   ├── appointment.ts         # Appointment model & operations
+│   │   ├── index.ts              # Model exports
+│   │   └── patient.ts            # Patient model & operations
+│   ├── env.ts                # Environment variable validation
 │   ├── mongodb.ts            # MongoDB connection singleton
-│   └── models/
-│       ├── patient.ts        # Patient data model & operations
-│       └── appointment.ts    # Appointment data model & operations
-└── .env.local                # Environment variables (not in repo)
+│   └── utils.ts              # Utility functions
+├── public/
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── .env.example              # Environment variables template
+├── .env.local                # Your local environment variables (not in repo)
+├── .gitignore
+├── components.json           # Shadcn UI configuration
+├── next.config.ts
+├── package.json
+├── README.md
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
 ## 🗄️ Database Schema
